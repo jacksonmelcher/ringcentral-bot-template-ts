@@ -1,0 +1,45 @@
+{
+    "name": "ringcentral-bot-template-ts",
+    "version": "1.0.0",
+    "description": "Template for creating bot in typescript",
+    "main": "src/express.js",
+    "scripts": {
+        "start": "ts-node-dev --respawn src/index.ts",
+        "dev": "ts-node-dev --respawn -r dotenv-override-true/config src/express.ts",
+        "build": "rm -rf dist && tsc",
+        "ngrok": "npx ngrok http -subdomain=jax 3000",
+        "setup-db": "curl -X PUT -u admin:password https://jax.ngrok.io/admin/setup-database",
+        "maintain-db": "curl -X PUT -u admin:password https://jax.ngrok.io/admin/maintain "
+    },
+    "dependencies": {
+        "axios": "^0.22.0",
+        "pg": "^8.7.1",
+        "ringcentral-chatbot": "^1.9.0"
+    },
+    "devDependencies": {
+        "@types/node": "^16.10.3",
+        "dotenv-override-true": "^6.2.2",
+        "ngrok": "^4.2.2",
+        "sqlite3": "^5.0.2",
+        "ts-node": "^10.3.0",
+        "ts-node-dev": "^1.1.8",
+        "typescript": "^4.4.3",
+        "yarn-upgrade-all": "^0.5.4"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jacksonmelcher/ringcentral-bot-template-ts.git"
+    },
+    "keywords": [
+        "template",
+        "ringcentral",
+        "bot",
+        "typescript"
+    ],
+    "author": "Jackson Melcher",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/jacksonmelcher/ringcentral-bot-template-ts/issues"
+    },
+    "homepage": "https://github.com/jacksonmelcher/ringcentral-bot-template-ts#readme"
+}
