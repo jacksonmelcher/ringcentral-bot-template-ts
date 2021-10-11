@@ -6,7 +6,10 @@
     "scripts": {
         "start": "ts-node-dev --respawn src/index.ts",
         "dev": "ts-node-dev --respawn -r dotenv-override-true/config src/express.ts",
-        "build": "rm -rf dist && tsc"
+        "build": "rm -rf dist && tsc",
+        "ngrok": "npx ngrok http -subdomain=jax 3000",
+        "setup-db": "curl -X PUT -u admin:password https://jax.ngrok.io/admin/setup-database",
+        "maintain-db": "curl -X PUT -u admin:password https://jax.ngrok.io/admin/maintain "
     },
     "dependencies": {
         "axios": "^0.22.0",
@@ -16,6 +19,7 @@
     "devDependencies": {
         "@types/node": "^16.10.3",
         "dotenv-override-true": "^6.2.2",
+        "ngrok": "^4.2.2",
         "sqlite3": "^5.0.2",
         "ts-node": "^10.3.0",
         "ts-node-dev": "^1.1.8",
