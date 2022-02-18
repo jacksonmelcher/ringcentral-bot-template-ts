@@ -25,7 +25,7 @@ yarn install
 ### Upgrade dependencies
 
 ```
-npx yarn-upgrade-all
+yarn yarn-upgrade-all
 ```
 
 ### Start ngrok to get a public address
