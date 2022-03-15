@@ -12,19 +12,19 @@
         "maintain-db": "curl -X PUT -u admin:password https://jax.ngrok.io/admin/maintain "
     },
     "dependencies": {
-        "axios": "^0.22.0",
-        "pg": "^8.7.1",
-        "ringcentral-chatbot": "^1.9.0"
+        "axios": "^0.26.1",
+        "pg": "^8.7.3",
+        "ringcentral-chatbot": "^1.11.0"
     },
     "devDependencies": {
-        "@types/node": "^16.10.3",
+        "@types/node": "^17.0.21",
         "dotenv-override-true": "^6.2.2",
-        "ngrok": "^4.2.2",
+        "ngrok": "^4.3.1",
         "sqlite3": "^5.0.2",
-        "ts-node": "^10.3.0",
+        "ts-node": "^10.7.0",
         "ts-node-dev": "^1.1.8",
-        "typescript": "^4.4.3",
-        "yarn-upgrade-all": "^0.5.4"
+        "typescript": "^4.6.2",
+        "yarn-upgrade-all": "^0.6.1"
     },
     "repository": {
         "type": "git",
