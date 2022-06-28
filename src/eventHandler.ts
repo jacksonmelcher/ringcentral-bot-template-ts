@@ -1,4 +1,3 @@
-
 export const handle = async (event: any) => {
     const { type } = event;
 
@@ -12,7 +11,7 @@ export const handle = async (event: any) => {
     }
 };
 
-  const handleMessage4Bot = async (event: any) => {
+const handleMessage4Bot = async (event: any) => {
     const { text, bot, group } = event;
     if (text === 'ping') {
         await bot.sendMessage(group.id, { text: 'pong' });
@@ -21,7 +20,6 @@ export const handle = async (event: any) => {
 const handleBotJoinedGroup = async (event: any) => {
     const { bot, group } = event;
     await bot.sendMessage(group.id, {
-        text:
-            'Thank you for using the RingCentral Chatbot template. Edit eventHandler.js to customize responses.',
+        text: 'Thank you for using the RingCentral Chatbot template. Edit eventHandler.js to customize responses.',
     });
 };
