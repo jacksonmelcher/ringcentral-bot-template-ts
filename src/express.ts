@@ -1,12 +1,11 @@
 import createApp from 'ringcentral-chatbot/dist/apps';
-import axios from 'axios';
+import { Application } from 'express';
+import Handler from './models/Handler';
+import connect from './utils/connect';
+import routes from './routes';
 
-import { handle } from './eventHandler';
+const handler = new Handler();
 
-const app = createApp(handle);
-app.listen(process.env.RINGCENTRAL_CHATBOT_EXPRESS_PORT);
+const app: Application = connect(createApp(handler.handleEvent));
 
-setInterval(
-    () => axios.put(`${process.env.RINGCENTRAL_CHATBOT_SERVER}/admin/maintain`),
-    86400000
-);
+routes(app, handler);
