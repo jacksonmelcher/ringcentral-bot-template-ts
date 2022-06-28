@@ -1,8 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
 import { createHmac } from 'crypto';
-import { get } from 'lodash';
-import jwt from 'jwt-simple';
-import { Service } from 'ringcentral-chatbot/dist/models';
 import logger from '../utils/logger';
 
 export const validateInteractiveMessage =
