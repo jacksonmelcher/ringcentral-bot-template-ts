@@ -1,25 +1,35 @@
 {
     "name": "ringcentral-bot-template-ts",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "description": "Template for creating bot in typescript",
-    "main": "src/express.js",
+    "main": "src/index.js",
     "scripts": {
-        "start": "ts-node-dev --respawn src/index.ts",
-        "dev": "ts-node-dev --respawn -r dotenv-override-true/config src/express.ts",
-        "build": "rm -rf dist && tsc",
-        "ngrok": "npx ngrok http -subdomain=jax 3000",
-        "setup-db": "curl -X PUT -u admin:password https://jax.ngrok.io/admin/setup-database",
-        "maintain-db": "curl -X PUT -u admin:password https://jax.ngrok.io/admin/maintain "
+        "start:dev": "nodemon -r dotenv/config src/express.ts",
+        "build": "tsc",
+        "start": "node dist/express.js",
+        "postinstall": "tsc",
+        "watch-node": "nodemon dist/express.js",
+        "watch-ts": "tsc -w"
     },
     "dependencies": {
         "axios": "^0.26.1",
+        "crypto-js": "^4.1.1",
+        "dotenv": "^16.0.0",
         "pg": "^8.7.3",
+        "pino": "^7.8.1",
+        "pino-pretty": "^7.5.3",
         "ringcentral-chatbot": "^1.11.0"
     },
     "devDependencies": {
+        "@types/crypto-js": "^4.1.1",
         "@types/node": "^17.0.21",
-        "dotenv-override-true": "^6.2.2",
+        "eslint": "^8.11.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-import": "^2.25.4",
+        "eslint-plugin-prettier": "^4.0.0",
         "ngrok": "^4.3.1",
+        "prettier": "^2.6.0",
         "sqlite3": "^5.0.2",
         "ts-node": "^10.7.0",
         "ts-node-dev": "^1.1.8",
@@ -36,10 +46,6 @@
         "bot",
         "typescript"
     ],
-    "author": "Jackson Melcher",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/jacksonmelcher/ringcentral-bot-template-ts/issues"
-    },
-    "homepage": "https://github.com/jacksonmelcher/ringcentral-bot-template-ts#readme"
+    "author": "",
+    "license": "MIT"
 }
